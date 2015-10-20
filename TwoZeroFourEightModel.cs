@@ -21,6 +21,18 @@ namespace twozerofoureight
         {
             return board;
         }
+        public int total()
+        {
+            int sum = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    sum = sum + board[i, j];
+                }
+            }
+            return sum;
+        }
 
         public TwoZeroFourEightModel(int size)
         {
@@ -33,7 +45,7 @@ namespace twozerofoureight
                 }
             }
             rand = new Random();
-            board = Random(board);
+            board = Random(board);            
             NotifyAll();
         }
 
@@ -101,7 +113,7 @@ namespace twozerofoureight
                     board[k, i] = 0;
                 }
             }
-            board = Random(board);
+            board = Random(board);           
             NotifyAll();
         }
 
@@ -153,7 +165,7 @@ namespace twozerofoureight
                     board[k, i] = 0;
                 }
             }
-            board = Random(board);
+            board = Random(board);            
             NotifyAll();
         }
 
@@ -207,7 +219,7 @@ namespace twozerofoureight
                     board[i, k] = 0;
                 }
             }
-            board = Random(board);
+            board = Random(board);           
             NotifyAll();
         }
 
@@ -257,8 +269,8 @@ namespace twozerofoureight
                     board[i, k] = 0;
                 }
             }
-            board = Random(board);
+            board = Random(board);            
             NotifyAll();
-        }
+        }        
     }
 }
