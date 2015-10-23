@@ -14,7 +14,8 @@ namespace twozerofoureight
     {
         Model model;
         Controller controller;
-       
+        TwoZeroFourEightScoreView ScoreView = new TwoZeroFourEightScoreView();
+
         public TwoZeroFourEightView()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace twozerofoureight
         {
             UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
             UpdateScore(((TwoZeroFourEightModel)m).total());
+            UpdateScoreView(((TwoZeroFourEightModel)m).total());
             //UpdateScore(((TwoZeroFourEightModel)m).GetBoard());
         }
 
@@ -63,19 +65,12 @@ namespace twozerofoureight
         {
             lblscore.Text = Convert.ToString(sum);
         }
-        //private void UpdateScore(int[,] board)
-        //{
-        //    int sum = 0;
-        //    for (int i = 0; i < 4; i++)
-        //    {
-        //        for (int j = 0; j < 4; j++)
-        //        {
-        //            sum = sum + board[i, j];
-        //        }
-        //    }
-
-        //    lblscore.Text = Convert.ToString(sum);
-        //}
+        public void UpdateScoreView(int sum)
+        {
+            //lblscore.Text = Convert.ToString(sum);
+            ScoreView.lblscore.Text = Convert.ToString(sum);
+            ScoreView.Visible = true;
+        }
         private void UpdateBoard(int[,] board)
         {
             UpdateTile(lbl00,board[0, 0]);
@@ -115,10 +110,5 @@ namespace twozerofoureight
         {
             controller.ActionPerformed(TwoZeroFourEightController.DOWN);
         }
-
-        //private void lblscore_Click(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }

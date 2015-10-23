@@ -276,7 +276,6 @@
             this.lblscore.Size = new System.Drawing.Size(13, 13);
             this.lblscore.TabIndex = 20;
             this.lblscore.Text = "0";
-            //this.lblscore.Click += new System.EventHandler(this.lblscore_Click);
             // 
             // label1
             // 
@@ -316,6 +315,7 @@
             this.Controls.Add(this.lbl00);
             this.Name = "TwoZeroFourEightView";
             this.Text = "Form1";
+            //this.Load += new System.EventHandler(this.TwoZeroFourEightView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
